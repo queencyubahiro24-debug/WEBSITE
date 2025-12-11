@@ -1,34 +1,66 @@
-// Theme Switcher
-const themeBtn = document.getElementById('themeBtn');
-themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-});
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-// Form Validation
-const signupForm = document.getElementById('signupForm');
-const formMessage = document.getElementById('formMessage');
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 
-signupForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
+header button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
 
-    if (name === "" || email === "" || password === "") {
-        formMessage.textContent = "All fields are required!";
-        formMessage.style.color = "red";
-    } else if (password.length < 6) {
-        formMessage.textContent = "Password must be at least 6 characters.";
-        formMessage.style.color = "red";
-    } else {
-        formMessage.textContent = `Welcome, ${name}! Form submitted successfully.`;
-        formMessage.style.color = "green";
-        signupForm.reset();
-    }
-});
+main {
+    padding: 20px;
+}
 
-// Image Change on Click
-const interactiveImage = document.getElementById('interactiveImage');
-interactiveImage.addEventListener('click', () => {
-    interactiveImage.src = interactiveImage.src.includes('image1.jpg') ? 'image2.jpg' : 'image1.jpg';
-});
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-bottom: 30px;
+}
+
+input {
+    margin: 5px 0 15px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+    color: white;
+}
+
+#interactiveImage {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#interactiveImage:hover {
+    transform: scale(1.05);
+}
+
+/* Dark Theme */
+body.dark {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+body.dark header {
+    background-color: #222;
+}
